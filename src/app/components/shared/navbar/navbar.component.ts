@@ -18,12 +18,18 @@ export class NavbarComponent implements OnInit {
 
 window.onresize = window.onload = () => {
   let logo = document.getElementById('imgNavb');
+  let icons = document.getElementById('icons');
+  let desk = document.getElementById('desk');
     if (window.innerWidth < 640) {
       logo.setAttribute('src', '../../../../assets/img/icono_granada.png');
       logo.style.width = '30px';
+      icons.style.display='block';
+      desk.style.display='none';
     }else{
       logo.setAttribute('src', '../../../../assets/img/logo_granada.png');
       logo.style.width = '120px';
+      icons.style.display='none';
+      desk.style.display='block';
     }
 };
 

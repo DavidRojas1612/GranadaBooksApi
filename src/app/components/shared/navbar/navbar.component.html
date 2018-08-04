@@ -5,22 +5,18 @@
           <img class="menu__icon" src="../../../../assets/img/logo_granada.png" id="imgNavb">
         </div>
       </a>
-      <div class="menu__container">  
+      <div class="menu__container" id="icons">  
         <a routerLink="./">
-          <div class="menu__icon__content">
             <img class="menu__icon__item" src="../../../../assets/img/search.png" >
-          </div>
         </a>
-        <a routerLink="./">
-          <div class="menu__icon__content">
+        <a routerLink="book/new">
             <img class="menu__icon__item" src="../../../../assets/img/add.png">
-          </div>
         </a>
       </div>    
-      <!-- <li class="menu__item">
-        <a routerLink="book/new" class="menu__link">
-          Create
-        </a>
-      </li> -->
+      <div class="menu__container__desk" id="desk">
+        <h3 class="menu__title">Titulo</h3>
+        <input class="input-f" type="text" name="title" id="title">
+        <button class="book__info__btn outline menu__btn" type="button" routerLink="book/new">Crear Nuevo</button>
+      </div>
     </ul>
   </nav>
