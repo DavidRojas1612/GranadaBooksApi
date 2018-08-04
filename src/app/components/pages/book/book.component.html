@@ -1,17 +1,16 @@
-<div class="book" *ngIf="!edit">
-    <img src={{this.imgService.getImg(this.book.ID)}} alt="">
+<div class="book l-container" *ngIf="!edit">
+    <img class="book__img" src={{this.imgService.getImg(this.book.ID)}} alt="">
 
 
-    <div class="book__info">
-      <p>*titulo: {{this.book.Title}}</p>
-      <p>*Fecha:  {{this.book.PublishDate | date:'mediumDate'}}</p>
-      <p>N° paginas: {{this.book.PageCount}}</p>
-      <p>*Description: {{this.book.Description}}</p>
-      <br>
-      <p>Extracto: {{this.book.Excerpt}}</p>
+    <div class="book__info"> 
+      <h3 class="book__info__item"> <span class="book__info__span">*titulo:</span> {{this.book.Title}}</h3>
+      <p class="book__info__item">  <span class="book__info__span">*Fecha:</span>  {{this.book.PublishDate | date:'mediumDate'}}</p>
+      <p class="book__info__item"> <span class="book__info__span">N° paginas: </span> {{this.book.PageCount}}</p>
+      <p class="book__info__item">  <span class="book__info__span">*Description: </span> {{this.book.Description}}</p>
+      <p class="book__info__item"> <span class="book__info__span">Extracto:</span>  {{this.book.Excerpt}}</p>
 
-      <button type="button" [routerLink]="['edit']" (click)="this.edit = !this.edit">Editar</button>
-      <button type="button" (click)="deleteBook(this.book.ID)">Borrar</button>
+      <button class="book__info btn" type="button" [routerLink]="['edit']" (click)="this.edit = !this.edit">Editar</button>
+      <button class="book__info btn" type="button" (click)="deleteBook(this.book.ID)">Borrar</button>
 
     </div>
 

@@ -4,42 +4,74 @@
 
 
 
-.container {
+.container__grid{
+        @include desde($medium){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+         }
+    
+         @include desde($large){
+            display: grid;
+            grid-template-columns: repeat(4, 200px);
+            grid-gap: 100px;   
+        }
+    }
 
-    @include desde($medium){
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2px;
-     }
 
-     @include desde($large){
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 10px;
-     }
-}
+
 .book{
     text-align: center;
-    width: 250px;
+    width: 200px;
     color:$font-color;
     position: relative;
     padding-bottom: 1.5em;
     cursor: pointer;
+    
 
+    
     @include desde($small){
-        margin: 10px auto 20px;
+        margin: 0 auto;
      }
 
-     @include desde($medium){
-        margin: 10px 0 20px;
+
+
+     &__container{
+         position: relative;
+         overflow: hidden;
+         transition: 1s all;
+         &:hover{
+            transform: scale(1.05);
+            .book__descrip{
+                opacity: 1;
+            }
+        }
      }
+
     &__img{
+        width: 100%;
         box-shadow: 0 .125rem .25rem rgba(0,0,0,.8);
+     
+        position: relative;
+        z-index: 5;
+
     }
+
     &__date{
         font-size: 0.5em;
         display: block;
-
-
     }
+
+    &__descrip{
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        color: $white;
+        background-color:rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: 1s opacity;
+    }
+   
 }

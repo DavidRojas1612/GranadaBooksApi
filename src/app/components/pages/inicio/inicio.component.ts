@@ -28,6 +28,7 @@ export class InicioComponent implements OnInit {
   buscarlibro(){
     this.bookService.getBooks().subscribe(resp=>{
       this.books = resp;
+      console.log(this.books)
     })
     
   }

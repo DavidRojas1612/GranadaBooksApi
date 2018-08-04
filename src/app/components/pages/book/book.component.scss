@@ -1,0 +1,13 @@
+.book{
+    flex-wrap: wrap;
+
+    &__img{
+        display: block;
+    }
+    &__info{
+        text-align: center;
+        &__item{
+            margin-bottom: 10px;
+        }
+    }
+}
