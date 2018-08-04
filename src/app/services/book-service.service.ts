@@ -46,8 +46,7 @@ export class BookServiceService {
       'Content-Type':'application/json'
     })
     let url = `${this.urlBooks}/${id}`
-    console.log(body)
-    return this.http.put(url,body,{ headers }).pipe(map(data => data.json()));
+    return this.http.put(url,body,{ headers })
 
   }
 
@@ -58,7 +57,6 @@ export class BookServiceService {
       'Content-Type':'application/json'
     })
     let url = `${this.urlBooks}`
-    console.log(body)
     return this.http.post(url,body,{ headers }).pipe(map(data => data.json()));
   }
 }

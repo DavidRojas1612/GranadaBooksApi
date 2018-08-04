@@ -1,10 +1,10 @@
+import { FormGroup,FormControl, Validators,FormBuilder, FormArray } from '@angular/forms';
+import { BookServiceService } from '../../../../services/book-service.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ImgService } from 'src/app/services/img.service';
-import { ActivatedRoute } from '@angular/router';
-import { FormGroup,FormControl, Validators,FormBuilder, FormArray } from '@angular/forms';
-// import { Observable } from 'rxjs/Observable';
 import { Book } from '../../../../class/books.class';
-import { BookServiceService } from '../../../../services/book-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-edit',
@@ -26,10 +26,11 @@ export class BookEditComponent implements OnInit {
 
   constructor(private imgService: ImgService,
               private activatedRoute: ActivatedRoute,
-              private bookService: BookServiceService
+              private bookService: BookServiceService,
+              private router: Router,
               ) {
 
-                this.activatedRoute.parent.params.subscribe( para =>{
+                this.activatedRoute.params.subscribe( para =>{
                   this.id = para.id;
                   this.book.ID = this.id
 
@@ -46,9 +47,13 @@ export class BookEditComponent implements OnInit {
 
   }
 
+
   guardar(){
-    this.bookService.updateBook(this.id,this.book).subscribe(resp=>{
-      console.log(resp);
+    this.bookService.updateBook(this.id,this.book).subscribe(resp =>{
+      if(resp.status === 200){
+        alert(`se ha guardado correctamente!, status: ${resp.status}`)
+        this.router.navigate(["/"]);
+      }
     })
     
   }

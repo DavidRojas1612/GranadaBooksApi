@@ -1,93 +1,68 @@
-<div class="bookEdit">
-    <img src={{this.imgService.getImg(this.id)}} alt="">
+<div class="bookEdit l-container">
 
-    <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
-        <div class="form-group" [ngClass]="{'form-danger': (Title.errors?.required || Title.errors?.minlength) && Title.touched}">
-          <label class="label-f" for="Title">Titulo</label>
-          <input class="input-f" 
-                 type="text"  
-                 placeholder="Title" 
-                 [(ngModel)]="book.Title" 
-                 minlength="4"
-                 name="Title" 
-                 required
-                 #Title="ngModel">
-          <div class="message">
-            <span class="ms-alert" *ngIf="Title.errors?.required && Title.touched">
-              Este campo es requerido
-            </span>
+  <div class="bookEdit__content">
+    <img class="bookEdit__img" src={{this.imgService.getImg(this.id)}} alt="">
+  </div>
+  <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+    <div class="form-group" [ngClass]="{'form-danger': (Title.errors?.required || Title.errors?.minlength) && Title.touched}">
+      <label class="label-f" for="Title">Titulo</label>
+      <input class="input-f" type="text" placeholder="Title" [(ngModel)]="book.Title" minlength="4" name="Title" required #Title="ngModel">
+      <div class="message">
+        <span class="ms-alert" *ngIf="Title.errors?.required && Title.touched">
+          Este campo es requerido
+        </span>
 
-          </div>
-        </div>
-  
-        <div class="form-group" [ngClass]="{'form-danger': (Description.errors?.required && Description.touched)}">
-          <label class="label-f" for="Description">Description</label>
-          <input class="input-f" 
-                 type="text"
-                 placeholder="Description"
-                 [(ngModel)]="book.Description"
-                 name="Description"
-                 required
-                 #Description="ngModel">        
-           <div class="message">
-              <span class="ms-alert" *ngIf="Description.errors?.required && Description.touched">
-                Este campo es requerido
-              </span>
-           </div>
-        </div>
-  
+      </div>
+    </div>
 
-        <div class="form-group">
-          <label class="label-f" for="PageCount">N° paginas</label>
-          <input class="input-f"
-                 type="number"
-                 placeholder="PageCount" 
-                 [(ngModel)]="book.PageCount"
-                 name="PageCount"
-                 #PageCount="ngModel"
-          >
-        </div>
-  
-        <div class="form-group" [ngClass]="{'form-danger': Excerpt.errors?.required && Excerpt.touched}">
-            <label class="label-f" for="Excerpt">extracto</label>
-            <input class="input-f" 
-                   type="text"
-                   placeholder="Excerpt" 
-                   [(ngModel)]="book.Excerpt"
-                   name="Excerpt"
-                   required
-                   #Excerpt="ngModel">
-            <div class="message">
-              <span class="ms-alert" *ngIf="Excerpt.errors?.required && Excerpt.touched">
-                Este campo es requerido
-              </span>
-            </div>
-        </div>
 
-        <div class="form-group" [ngClass]="{'form-danger': publishdate.errors?.required && publishdate.touched}">
-            <label class="label-f" for="publishdate">Fecha</label>
-            <input class="input-f" 
-                   type="date"
-                   placeholder="Fecha" 
-                   [(ngModel)]="book.PublishDate"
-                   name="publishdate"
-                   required
-                   #publishdate="ngModel">
-            <div class="message">
-              <span class="ms-alert" *ngIf="publishdate.errors?.required && publishdate.touched">
-                Este campo es requerido
-              </span>
-            </div>
-        </div>
+    <div class="form-group" [ngClass]="{'form-danger': publishdate.errors?.required && publishdate.touched}">
+      <label class="label-f" for="publishdate">Fecha</label>
+      <input class="input-f" type="date" placeholder="Fecha" [(ngModel)]="book.PublishDate" name="publishdate" required #publishdate="ngModel">
+      <div class="message">
+        <span class="ms-alert" *ngIf="publishdate.errors?.required && publishdate.touched">
+          Este campo es requerido
+        </span>
+      </div>
+    </div>
 
-  
-        <div class="form-group">
-          <button class="button-f" type="submit" [disabled]="!forma.valid">Guardar</button>
-        </div>
-      </form>
-      <pre>
-        {{ book | json}}
-        {{id}}
-      </pre>
-  
+
+    <div class="form-group">
+      <label class="label-f" for="PageCount">N° paginas</label>
+      <input class="input-f" type="number" placeholder="PageCount" [(ngModel)]="book.PageCount" name="PageCount" #PageCount="ngModel">
+    </div>
+
+
+
+    <div class="form-group" [ngClass]="{'form-danger': (Description.errors?.required && Description.touched)}">
+      <label class="label-f" for="Description">Description</label>
+      <input class="input-f" type="text" placeholder="Description" [(ngModel)]="book.Description" name="Description" required #Description="ngModel">
+      <div class="message">
+        <span class="ms-alert" *ngIf="Description.errors?.required && Description.touched">
+          Este campo es requerido
+        </span>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group" [ngClass]="{'form-danger': Excerpt.errors?.required && Excerpt.touched}">
+      <label class="label-f" for="Excerpt">Extracto</label>
+      <textarea class="input-f textarea" placeholder="Excerpt" [(ngModel)]="book.Excerpt" name="Excerpt" required #Excerpt="ngModel"></textarea>
+      <div class="message">
+        <span class="ms-alert" *ngIf="Excerpt.errors?.required && Excerpt.touched">
+          Este campo es requerido
+        </span>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <button class="book__info__btn" type="submit" [disabled]="!forma.valid">Guardar</button>
+      <button class="book__info__btn outline" type="button" routerLink="../">Cancelar</button>
+    </div>
+  </form>
 </div>

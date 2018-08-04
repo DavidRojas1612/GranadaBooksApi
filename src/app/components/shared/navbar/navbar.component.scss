@@ -8,6 +8,7 @@ nav{
     background-color:$primary-darker;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
     margin-bottom: 2em;
+    height: 50px;
   }
   
   .menu {
@@ -16,6 +17,9 @@ nav{
    display: table;
    margin:0 auto;
    
+   &__container{
+     display: flex;
+   }
 
    &__item{
     float: left;
@@ -34,9 +38,10 @@ nav{
 
   &__icon{
       position: absolute;
-      width: 2em;
+      width: 100px;
       left: 10px;
-      top: 5px;
+      top: 10px;   
+       
   }
   
 }

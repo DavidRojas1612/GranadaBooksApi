@@ -1,13 +1,63 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
 .book{
     flex-wrap: wrap;
 
     &__img{
-        display: block;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.8);
     }
     &__info{
-        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+        
         &__item{
-            margin-bottom: 10px;
+            margin-bottom: 10px; 
+            &:first-child{
+                margin-top: 20px;
+            }
+
+            &__content{
+
+                height: auto;
+                overflow: hidden;
+            }
+
+        }
+        
+        &__span{
+            display: inline-block;
+            font-weight:bold;
+            margin-right: 05px;
+            color: $primary-darker; 
+        }
+
+        &__btn{
+            display: inline-block;
+            margin-right: 30px;
+            width: 90px;
+            height: 30px;
+            color: $white;
+            font-weight: bold;
+            background-color: $primary-darker;
+            border: 1.5px solid $primary-darker;
+            border-radius: .25rem;
+            transition: transform 250ms;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
+
+            &__content{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px; 
+            }
+
+            &.outline{
+                background-color: $white;
+                border: 1.5px solid $primary-darker;
+                color: $primary-darker;
+            }
         }
     }
 }

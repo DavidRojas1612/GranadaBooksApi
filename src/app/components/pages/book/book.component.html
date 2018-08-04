@@ -1,17 +1,22 @@
-<div class="book l-container" *ngIf="!edit">
+<div class="book l-container" id="infoB">
     <img class="book__img" src={{this.imgService.getImg(this.book.ID)}} alt="">
-
-
     <div class="book__info"> 
-      <h3 class="book__info__item"> <span class="book__info__span">*titulo:</span> {{this.book.Title}}</h3>
-      <p class="book__info__item">  <span class="book__info__span">*Fecha:</span>  {{this.book.PublishDate | date:'mediumDate'}}</p>
-      <p class="book__info__item"> <span class="book__info__span">N° paginas: </span> {{this.book.PageCount}}</p>
-      <p class="book__info__item">  <span class="book__info__span">*Description: </span> {{this.book.Description}}</p>
-      <p class="book__info__item"> <span class="book__info__span">Extracto:</span>  {{this.book.Excerpt}}</p>
+      <p class="book__info__item"> <span class="book__info__span">Titulo:</span> {{this.book.Title}}.</p>
+      <p class="book__info__item">  <span class="book__info__span">Fecha:</span>  {{this.book.PublishDate | date:'mediumDate'}}.</p>
+      <p class="book__info__item"> <span class="book__info__span">N° paginas: </span> {{this.book.PageCount}}.</p>
+      
+      <div class="book__info__item__content">
+        <p class="book__info__item">  <span class="book__info__span">Description: </span> {{this.book.Description}}.</p>
+      </div>
 
-      <button class="book__info btn" type="button" [routerLink]="['edit']" (click)="this.edit = !this.edit">Editar</button>
-      <button class="book__info btn" type="button" (click)="deleteBook(this.book.ID)">Borrar</button>
+      <div class="book__info__item__content">
+        <p class="book__info__item"> <span class="book__info__span">Extracto:</span>  {{this.book.Excerpt}}.</p>
+      </div>
 
+      <div class="book__info__btn__content">
+        <button class="book__info__btn" type="button" [routerLink]="['../../book/',this.book.ID,'edit']" >Editar</button>
+        <button class="book__info__btn" type="button" (click)="deleteBook(this.book.ID)">Borrar</button>
+      </div>
     </div>
 
 </div>

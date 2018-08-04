@@ -1,10 +1,26 @@
 <nav>
-    <ul class="menu">  
-      <img class="menu__icon" src="../../../../assets/img/icono_granada.png" alt="">
-      <li class="menu__item">
+    <ul class="menu">
+      <a routerLink="./">
+        <div class="menu__icon__content">
+          <img class="menu__icon" src="../../../../assets/img/logo_granada.png" id="imgNavb">
+        </div>
+      </a>
+      <div class="menu__container">  
+        <a routerLink="./">
+          <div class="menu__icon__content">
+            <img class="menu__icon__item" src="../../../../assets/img/search.png" >
+          </div>
+        </a>
+        <a routerLink="./">
+          <div class="menu__icon__content">
+            <img class="menu__icon__item" src="../../../../assets/img/add.png">
+          </div>
+        </a>
+      </div>    
+      <!-- <li class="menu__item">
         <a routerLink="book/new" class="menu__link">
           Create
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav>
