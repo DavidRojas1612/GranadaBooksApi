@@ -1,8 +1,12 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
 nav{
     overflow: hidden;
     top: 0;
     width: 100%;
-    background-color: teal;
+    background-color:$primary-darker;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
   }
   
   .menu {
@@ -10,7 +14,7 @@ nav{
    text-align: center;
    display: table;
    margin:0 auto;
-
+   
 
    &__item{
     float: left;
@@ -24,7 +28,7 @@ nav{
     display: block;
     text-decoration: none;
     padding: 1em 1.5em;
-    color: white;
+    color: $white;
   }
 
   &__icon{

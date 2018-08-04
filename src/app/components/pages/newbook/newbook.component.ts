@@ -26,6 +26,12 @@ export class NewbookComponent implements OnInit {
     ){ }
 
   ngOnInit() {
+    this.book.ID = Math.round((Math.random()*(300-200)+200));
   }
+
+  crear(){
+    this.bookService.createBook(this.book).subscribe(data => console.log(data));
+  }
+
 
 }
