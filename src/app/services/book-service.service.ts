@@ -13,16 +13,17 @@ export class BookServiceService {
     console.log('service listo');
     
   }
-
-  private books: any[] = []
+  
   private urlBooks:string = 'https://fakerestapi.azurewebsites.net/api/books'
 
+  //método para obtener info de un solo libro
   getBook(id:number){
     let url = `${this.urlBooks}/${id}`
     console.log(url)
     return this.http.get(url).pipe(map(data => data.json()));                    
   }
 
+  //método para obtener listado de los libros
   getBooks(){
     let url = this.urlBooks
 
@@ -30,6 +31,7 @@ export class BookServiceService {
 
   }
 
+  //método para borrar un  libro
   deleteBook(id:number){
     let url = `${this.urlBooks}/${id}`
     
@@ -37,6 +39,7 @@ export class BookServiceService {
     return this.http.delete(url)
   }
 
+  //método para actualizar un  libro
   updateBook(id, book:Book){
     let body = JSON.stringify( book )
     let headers = new Headers({
@@ -48,4 +51,14 @@ export class BookServiceService {
 
   }
 
+  //método para crear un  libro
+  createBook( book:Book ){
+    let body = JSON.stringify( book )
+    let headers = new Headers({
+      'Content-Type':'application/json'
+    })
+    let url = `${this.urlBooks}`
+    console.log(body)
+    return this.http.post(url,body,{ headers }).pipe(map(data => data.json()));
+  }
 }

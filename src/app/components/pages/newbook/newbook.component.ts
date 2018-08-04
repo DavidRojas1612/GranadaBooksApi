@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/class/books.class';
+import { ImgService } from 'src/app/services/img.service';
+import { ActivatedRoute } from '@angular/router';
+import { BookServiceService } from 'src/app/services/book-service.service';
 
 @Component({
   selector: 'app-newbook',
@@ -7,7 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewbookComponent implements OnInit {
 
-  constructor() { }
+  private book:Book = {
+    ID: 0,
+    Title: "",
+    Description: "",
+    PageCount: 0,
+    Excerpt: "",
+    PublishDate: null
+  };
+
+  constructor(private imgService: ImgService,
+    private activatedRoute: ActivatedRoute,
+    private bookService: BookServiceService
+    ){ }
 
   ngOnInit() {
   }
