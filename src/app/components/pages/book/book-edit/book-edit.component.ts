@@ -32,6 +32,10 @@ export class BookEditComponent implements OnInit {
                 this.activatedRoute.parent.params.subscribe( para =>{
                   this.id = para.id;
                   this.book.ID = this.id
+
+                  this.bookService.getBook(this.id).subscribe(resp=>{
+                    this.book= resp;
+                  })
                   console.log(this.id)
                 })
 

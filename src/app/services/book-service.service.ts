@@ -17,7 +17,7 @@ export class BookServiceService {
   private books: any[] = []
   private urlBooks:string = 'https://fakerestapi.azurewebsites.net/api/books'
 
-  getBook(id: string){
+  getBook(id:number){
     let url = `${this.urlBooks}/${id}`
     console.log(url)
     return this.http.get(url).pipe(map(data => data.json()));                    
@@ -30,7 +30,7 @@ export class BookServiceService {
 
   }
 
-  deleteBook(id){
+  deleteBook(id:number){
     let url = `${this.urlBooks}/${id}`
     
     console.log(url)
