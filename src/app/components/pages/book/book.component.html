@@ -1,0 +1,19 @@
+<div class="book" *ngIf="!edit">
+    <img src={{this.imgService.getImg(this.book.ID)}} alt="">
+
+
+    <div class="book__info">
+      <p>*titulo: {{this.book.Title}}</p>
+      <p>*Fecha:  {{this.book.PublishDate | date:'mediumDate'}}</p>
+      <p>N° paginas: {{this.book.PageCount}}</p>
+      <p>*Description: {{this.book.Description}}</p>
+      <br>
+      <p>Extracto: {{this.book.Excerpt}}</p>
+
+      <button type="button" [routerLink]="['edit']" (click)="this.edit = !this.edit">Editar</button>
+      <button type="button" (click)="deleteBook(this.book.ID)">Borrar</button>
+
+    </div>
+
+</div>
+<router-outlet></router-outlet>

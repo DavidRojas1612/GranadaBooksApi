@@ -1,0 +1,43 @@
+nav{
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    background-color: teal;
+  }
+  
+  .menu {
+   list-style-type: none; 
+   text-align: center;
+   display: table;
+   margin:0 auto;
+
+
+   &__item{
+    float: left;
+    margin: 0;
+    &:hover{
+        background-color: rgba(0,0,0,0.3);
+      }
+  }
+
+  &__link{
+    display: block;
+    text-decoration: none;
+    padding: 1em 1.5em;
+    color: white;
+  }
+
+  &__icon{
+      position: absolute;
+      width: 2em;
+      left: 10px;
+      top: 5px;
+  }
+  
+}
+  
+  
+
+
+  
+  

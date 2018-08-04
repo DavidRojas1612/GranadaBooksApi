@@ -1,0 +1,7 @@
+<div *ngFor="let book of books; let i = index">
+    <div class="book" (click)="goto(i+1)">
+        <img src={{this.imgService.getImg(i+1)}} alt="">
+        <h2>{{book.Title}}</h2>
+        <p>{{book.PublishDate | date:'yyyy' }}</p>
+    </div>
+</div>
