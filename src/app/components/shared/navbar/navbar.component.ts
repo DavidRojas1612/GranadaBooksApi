@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   }
 
   searchBook( termino:string ){
+    console.log(termino)
     this._router.navigate( ['/book/search',termino])
   }
 

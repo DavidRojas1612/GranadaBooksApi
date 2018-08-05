@@ -69,7 +69,7 @@ export class BookServiceService {
     let books =  JSON.parse(window.localStorage.getItem('data'))
     termino = termino.toLocaleLowerCase();
 
-    for(let book of this.books){
+    for(let book of books){
       let title = book.Title.toLocaleLowerCase();
 
       if( title.indexOf( termino )  >= 0 ){
