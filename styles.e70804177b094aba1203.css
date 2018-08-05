@@ -26,7 +26,6 @@ button:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9); }
 .l-container {
-  max-width: 1200px;
   display: flex;
   justify-content: center; }
 
