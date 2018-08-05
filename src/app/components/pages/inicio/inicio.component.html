@@ -1,8 +1,8 @@
 <div class="l-container inicio">
     <div class="container__grid">
-        <div *ngFor="let book of books; let i = index" class="book" (click)="goto(i+1)">
+        <div *ngFor="let book of books; let i = index" class="book" (click)="goto(book.ID)">
            <div class="book__container">
-                <img [src]="this.imgService.getImg(i+1)" alt="" class="book__img">
+                <img [src]="this.imgService.getImg(book.ID)" alt="" class="book__img">
                 <p class="book__descrip">{{book.Description}}</p>
             </div>
             <h2 class="book__title">
