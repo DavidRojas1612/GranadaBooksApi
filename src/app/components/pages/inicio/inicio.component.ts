@@ -19,10 +19,10 @@ export class InicioComponent implements OnInit {
               private router: Router) 
   {
     
-    this.books = JSON.parse(window.localStorage.getItem('data'))
-   }
-
+  }
+  
   ngOnInit() {
+    this.books = JSON.parse(window.localStorage.getItem('data'))
   }
 
 

@@ -20,6 +20,11 @@ nav{
      right: 10px;
      top: 10px;
 
+     & a{
+       display: inline-block;
+       margin-left: 30px;
+     }
+
      &__desk {
       margin-top: 10px;
       .menu__title{
