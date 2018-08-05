@@ -15,11 +15,11 @@ import { ImgService } from 'src/app/services/img.service';
 })
 export class BookComponent implements OnInit{
 
-  book = {};
-  private edit:boolean = false;
+  book:any = {};
+  edit:boolean = false;
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private imgService: ImgService,
+              public imgService: ImgService,
               private bookService: BookServiceService,
               ) {
 

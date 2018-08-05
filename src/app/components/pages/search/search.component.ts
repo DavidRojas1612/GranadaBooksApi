@@ -12,7 +12,7 @@ import { ImgService } from 'src/app/services/img.service';
 export class SearchComponent implements OnInit {
 
   bus: any;
-  private books:Book[]=[]
+  books:Book[]=[]
   constructor(private activatedRoute:ActivatedRoute,
               private _router:Router,   
               public imgService: ImgService,

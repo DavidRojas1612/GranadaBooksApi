@@ -12,7 +12,7 @@ import { ImgService } from '../../../services/img.service';
 export class InicioComponent implements OnInit {
 
 
-  private books:any[] = [];
+  books:any[] = [];
 
   constructor(public bookService: BookServiceService,
               public imgService: ImgService,

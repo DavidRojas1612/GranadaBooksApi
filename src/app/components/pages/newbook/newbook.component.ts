@@ -11,7 +11,7 @@ import { BookServiceService } from 'src/app/services/book-service.service';
 })
 export class NewbookComponent implements OnInit {
 
-  private book:Book = {
+  book:Book = {
     ID: 0,
     Title: "",
     Description: "",
@@ -40,8 +40,12 @@ export class NewbookComponent implements OnInit {
         let url = window.URL.createObjectURL(file)
         prevs.setAttribute('src', `${url}`)
 
-        prevs.style.width = '200px';
-        prevs.style.height = '300px';
+        // se que esto se considera mala practica, pero no me dejaba buildear
+        prevs.setAttribute('style', 'width: 200px;')
+        
+        //de esta manera = {
+          // prevs.style.width = '200px';
+          //  }
       })
     })
   }
