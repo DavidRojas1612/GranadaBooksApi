@@ -58,6 +58,9 @@ export class NewbookComponent implements OnInit {
   crear(){
     this.bookService.createBook(this.book).subscribe(resp =>{
       if(resp.status === 200){
+        let books =  JSON.parse(window.localStorage.getItem('data'))
+        books.push(this.book);
+        window.localStorage.setItem('data', JSON.stringify(books))
         alert(`se ha guardado correctamente!, status: ${resp.status}`)
         this.router.navigate(["/"]);
       }

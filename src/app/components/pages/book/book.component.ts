@@ -43,6 +43,9 @@ export class BookComponent implements OnInit{
 
       this.bookService.deleteBook(id).subscribe(resp =>{
         if(resp.status === 200){
+          let books =  JSON.parse(window.localStorage.getItem('data'))
+          books.splice(id-1,1);
+          window.localStorage.setItem('data', JSON.stringify(books))
           alert(`se ha borrado correctamente!, status: ${resp.status}`)
           this.router.navigate(["/"]);
         }

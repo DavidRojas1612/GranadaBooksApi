@@ -50,6 +50,9 @@ export class BookEditComponent implements OnInit {
   guardar(){
     this.bookService.updateBook(this.id,this.book).subscribe(resp =>{
       if(resp.status === 200){
+        let books =  JSON.parse(window.localStorage.getItem('data'))
+        books.splice(this.id-1,1,this.book);
+        window.localStorage.setItem('data', JSON.stringify(books))
         alert(`se ha guardado correctamente!, status: ${resp.status}`)
         this.router.navigate(["/"]);
       }
