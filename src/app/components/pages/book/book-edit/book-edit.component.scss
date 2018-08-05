@@ -26,11 +26,7 @@
     flex-wrap: wrap;
     position: relative;
     color: $primary-darker;
-    @include desde($medium){
-        display: block;
-        width: 40%;
-        margin: 0 auto 10px;
-     }
+    
 }
 .label-f {
 
@@ -60,3 +56,4 @@
     outline: none;
     border: 1.5px solid $primary-light;
 }
+
