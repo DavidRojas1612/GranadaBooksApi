@@ -55407,7 +55407,6 @@ var SearchComponent = /** @class */ /*@__PURE__*/ (function () {
         this.activatedRoute.params.subscribe(function (params) {
             _this.books = _this.bookservice.searchBook(params['title']);
             console.log(_this.books);
-            _this.bus = params['nombre'];
         });
     };
     return SearchComponent;
@@ -55542,6 +55541,7 @@ var NavbarComponent = /** @class */ /*@__PURE__*/ (function () {
     NavbarComponent.prototype.ngOnInit = function () {
     };
     NavbarComponent.prototype.searchBook = function (termino) {
+        console.log(termino);
         this._router.navigate(['/book/search', termino]);
     };
     return NavbarComponent;
@@ -55634,8 +55634,8 @@ var BookServiceService = /** @class */ /*@__PURE__*/ (function () {
         var booksArr = [];
         var books = JSON.parse(window.localStorage.getItem('data'));
         termino = termino.toLocaleLowerCase();
-        for (var _i = 0, _a = this.books; _i < _a.length; _i++) {
-            var book = _a[_i];
+        for (var _i = 0, books_1 = books; _i < books_1.length; _i++) {
+            var book = books_1[_i];
             var title = book.Title.toLocaleLowerCase();
             if (title.indexOf(termino) >= 0) {
                 booksArr.push(book);
