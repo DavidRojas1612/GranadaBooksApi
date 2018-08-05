@@ -13,9 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BookEditComponent implements OnInit {
 
-  private id:number;
+ id:number;
 
-  private book:Book = {
+ book:Book = {
     ID: 0,
     Title: "",
     Description: "",
@@ -24,7 +24,7 @@ export class BookEditComponent implements OnInit {
     PublishDate: null
   };
 
-  constructor(private imgService: ImgService,
+  constructor(public imgService: ImgService,
               private activatedRoute: ActivatedRoute,
               private bookService: BookServiceService,
               private router: Router,

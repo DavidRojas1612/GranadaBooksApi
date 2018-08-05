@@ -3,7 +3,7 @@
   <div class="bookEdit__content">
     <img src="" alt="" class="bookNew__img book__img">
   </div>
-  <form (ngSubmit)="crear(forma)" #forma="ngForm" novalidate="">
+  <form (ngSubmit)="crear()" #forma="ngForm" novalidate="">
     
       <div class="form-group" [ngClass]="{'form-danger': (Title.errors?.required || Title.errors?.minlength) && Title.touched}">
         <label class="label-f" for="Title">Titulo</label>

@@ -3,7 +3,7 @@
   <div class="bookEdit__content">
     <img class="bookEdit__img" src={{this.imgService.getImg(this.id)}} alt="">
   </div>
-  <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+  <form (ngSubmit)="guardar()" #forma="ngForm" novalidate="">
     <div class="form-group" [ngClass]="{'form-danger': (Title.errors?.required || Title.errors?.minlength) && Title.touched}">
       <label class="label-f" for="Title">Titulo</label>
       <input class="input-f" type="text" placeholder="Title" [(ngModel)]="book.Title" minlength="4" name="Title" required #Title="ngModel">
