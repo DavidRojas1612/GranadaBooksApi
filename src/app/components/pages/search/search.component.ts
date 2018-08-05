@@ -27,8 +27,9 @@ export class SearchComponent implements OnInit {
       this.books = this.bookservice.searchBook( params['title']);  
       console.log(this.books);    
      });
-    
+     }
 
-  }
-
+     goto(idx){
+      this._router.navigate(["/book",idx]);
+    }
 }
