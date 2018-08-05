@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
@@ -16,6 +16,24 @@ export class NavbarComponent implements OnInit {
   searchBook( termino:string ){
     console.log(termino)
     this._router.navigate( ['/book/search',termino])
+  }
+
+
+  @ViewChild('searchIcon') input: ElementRef;
+
+  ngAfterContentInit() {
+    let active = false;
+    this.input.nativeElement.addEventListener('click', (e:any) =>{
+      
+      if (active === false){
+        document.getElementById('search').classList.add("mostrar");
+        active = true;
+        }else {
+        document.getElementById('search').classList.remove("mostrar");   
+        active = false;
+      }
+      
+    })
   }
 
 }

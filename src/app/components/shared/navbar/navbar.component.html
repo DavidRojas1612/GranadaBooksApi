@@ -1,3 +1,5 @@
+
+<div class="search__container">
 <nav>
     <ul class="menu">
       <a routerLink="./">
@@ -6,8 +8,8 @@
         </div>
       </a>
       <div class="menu__container" id="icons">  
-        <a routerLink="./">
-            <img class="menu__icon__item" src="assets/img/search.png" >
+        <a href="#">
+            <img class="menu__icon__item" src="assets/img/search.png" #searchIcon>
         </a>
         <a routerLink="book/new">
             <img class="menu__icon__item" src="assets/img/add.png">
@@ -20,3 +22,9 @@
       </div>
     </ul>
   </nav>
+
+  <div class="search" id="search">
+    <input class="input-f search__input" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText.value)" #searchText>
+  </div>
+
+</div>
