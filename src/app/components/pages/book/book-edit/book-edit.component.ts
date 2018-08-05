@@ -37,7 +37,6 @@ export class BookEditComponent implements OnInit {
                   this.bookService.getBook(this.id).subscribe(resp=>{
                     this.book= resp;
                   })
-                  console.log(this.id)
                 })
 
                 

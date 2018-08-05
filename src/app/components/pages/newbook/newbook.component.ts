@@ -29,7 +29,7 @@ export class NewbookComponent implements OnInit {
      }
      
 
-  //obtener elementos del dom con angular, example   
+  //obtener elementos del dom con angular, example: escuchar evento del input file y modificar la imagen   
   @ViewChild('Imagen') input: ElementRef;
 
   ngAfterContentInit() {

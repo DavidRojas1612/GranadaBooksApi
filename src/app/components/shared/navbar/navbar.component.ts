@@ -20,6 +20,8 @@ export class NavbarComponent implements OnInit {
 }
 
 
+
+//metodo para hacer el navbar responsivo con las imagenes.
 window.onresize = window.onload = () => {
   let logo = document.getElementById('imgNavb');
   let icons = document.getElementById('icons');
