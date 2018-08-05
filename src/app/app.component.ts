@@ -9,7 +9,14 @@ import { BookServiceService } from './services/book-service.service';
 export class AppComponent {
   title = 'app';
 
+  books:any[] =[]
   constructor(private serviceBook: BookServiceService){
-
+    
+    this.serviceBook.getBooks().subscribe(resp=>{
+      this.books = resp;
+      console.log(this.books)
+      window.localStorage.setItem('data', JSON.stringify(this.books))
+    })
+    
   }
 }

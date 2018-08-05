@@ -12,12 +12,6 @@ export class BookServiceService {
   books:any[] =[]
   constructor(public http: Http) { 
     console.log('service listo');
-
-    this.getBooks().subscribe(resp=>{
-      this.books = resp;
-      console.log(this.books)
-      window.localStorage.setItem('data', JSON.stringify(this.books))
-    })
   }
   
   private urlBooks:string = 'https://fakerestapi.azurewebsites.net/api/books'
@@ -34,6 +28,10 @@ export class BookServiceService {
 
     return this.http.get(url).pipe(map(data => data.json()));
 
+  }
+
+  getBooksData(){
+    return this.books;
   }
 
   //método para borrar un  libro
