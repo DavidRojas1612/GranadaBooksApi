@@ -55338,7 +55338,7 @@ function View_SearchComponent_1(_l) {
             var ad = true;
             var _co = _v.component;
             if (("click" === en)) {
-                var pd_0 = (_co.goto((_v.context.index + 1)) !== false);
+                var pd_0 = (_co.goto(_v.context.$implicit.ID) !== false);
                 ad = (pd_0 && ad);
             }
             return ad;
@@ -55408,6 +55408,9 @@ var SearchComponent = /** @class */ /*@__PURE__*/ (function () {
             _this.books = _this.bookservice.searchBook(params['title']);
             console.log(_this.books);
         });
+    };
+    SearchComponent.prototype.goto = function (idx) {
+        this._router.navigate(["/book", idx]);
     };
     return SearchComponent;
 }());
