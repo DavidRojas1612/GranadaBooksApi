@@ -5,7 +5,7 @@
   </div>
   <form (ngSubmit)="guardar()" #forma="ngForm" novalidate="">
     <div class="form-group" [ngClass]="{'form-danger': (Title.errors?.required || Title.errors?.minlength) && Title.touched}">
-      <label class="label-f" for="Title">Titulo</label>
+      <label class="label-f" for="Title">Título</label>
       <input class="input-f" type="text" placeholder="Title" [(ngModel)]="book.Title" minlength="4" name="Title" required #Title="ngModel">
       <div class="message">
         <span class="ms-alert" *ngIf="Title.errors?.required && Title.touched">
@@ -35,7 +35,7 @@
 
 
     <div class="form-group" [ngClass]="{'form-danger': (Description.errors?.required && Description.touched)}">
-      <label class="label-f" for="Description">Description</label>
+      <label class="label-f" for="Description">Descripción</label>
       <input class="input-f" type="text" placeholder="Description" [(ngModel)]="book.Description" name="Description" required #Description="ngModel">
       <div class="message">
         <span class="ms-alert" *ngIf="Description.errors?.required && Description.touched">
@@ -61,8 +61,8 @@
 
 
     <div class="form-group btns">
-      <button class="book__info__btn" type="submit" [disabled]="!forma.valid">Guardar</button>
       <button class="book__info__btn outline" type="button" routerLink="../">Cancelar</button>
+      <button class="book__info__btn" type="submit" [disabled]="!forma.valid">Guardar</button>
     </div>
   </form>
 </div>

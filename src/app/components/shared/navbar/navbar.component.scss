@@ -53,6 +53,7 @@ nav{
       width: 100px;
       left: 10px;
       top: 10px;   
+      cursor: pointer;
   }
 
   &__btn{
@@ -76,7 +77,7 @@ nav{
   
   display: flex;
   justify-content: center;
-  transition: 1s all;
+  transition: 500ms all;
 
   &.mostrar{
     padding: 10px;
@@ -90,7 +91,7 @@ nav{
 
   &__input{
     height: 0;
-    transition: 1s all;
+    transition: 500ms all;
     border: 0;
     opacity: 0;
   }

@@ -46,6 +46,7 @@
             border-radius: .25rem;
             transition: transform 250ms;
             box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
+            cursor: pointer;
 
             &__content{
                 display: flex;

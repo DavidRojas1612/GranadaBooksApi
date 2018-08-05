@@ -19,11 +19,12 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  @ViewChild('searchIcon') input: ElementRef;
-
+  @ViewChild('searchIcon') icon: ElementRef;
+  @ViewChild('searchText') input: ElementRef;
+  
   ngAfterContentInit() {
     let active = false;
-    this.input.nativeElement.addEventListener('click', (e:any) =>{
+    this.icon.nativeElement.addEventListener('click', (e:any) =>{
       
       if (active === false){
         document.getElementById('search').classList.add("mostrar");
@@ -32,9 +33,18 @@ export class NavbarComponent implements OnInit {
         document.getElementById('search').classList.remove("mostrar");   
         active = false;
       }
-      
     })
+
+    this.input.nativeElement.addEventListener('keyup', (e)=>{
+      if (e.key === 'Enter'){
+        this.input.nativeElement.setAttribute('value', 'mundo')
+        document.getElementById('search').classList.remove("mostrar");
+      }
+    });
+    
+  
   }
+
 
 }
 

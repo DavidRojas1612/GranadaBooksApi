@@ -16,15 +16,15 @@
         </a>
       </div>    
       <div class="menu__container__desk" id="desk">
-        <h3 class="menu__title">Titulo</h3>
-        <input class="input-f" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText.value)" #searchText>
+        <h3 class="menu__title">Título</h3>
+        <input class="input-f" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText1.value)" #searchText1>
         <button class="book__info__btn outline menu__btn" type="button" routerLink="book/new">Crear Nuevo</button>
       </div>
     </ul>
   </nav>
 
   <div class="search" id="search">
-    <input class="input-f search__input" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText.value)" #searchText>
+    <input class="input-f search__input" type="text" name="title" id="searchTitle"  (keyUp.enter)="searchBook(searchText.value)" #searchText>
   </div>
 
 </div>
