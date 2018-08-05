@@ -1,8 +1,42 @@
+@import '../book/book-edit/book-edit.component.scss';
 
-.form-danger{
-    color: #a94442;
-}
+.bookNew{
+    flex-wrap: wrap;
 
-.ms-alert{
-    font-size: 14px;
+    @include desde($medium){
+        display: block;
+     }
+
+     &__content{
+        width: 200px;
+        @include desde($medium){
+            margin: 0 auto 30px;
+         }
+     }
+
+    &__input{
+        position: relative;
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        z-index: -10;
+    }
+    &__label{
+        width: 100px;
+        padding: 5px;
+        border-radius: 0.25em;
+        background-color:$primary-darker; 
+        color: $white;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
+        font-weight: bold;
+        transition: all 250ms;
+        margin-right: 10px;
+
+
+        &:active{
+            transform: scale(0.9);
+        }
+        
+
+    } 
 }

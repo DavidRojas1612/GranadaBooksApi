@@ -9,9 +9,15 @@ import { map } from 'rxjs/operators'
 })
 export class BookServiceService {
 
+  books:any[] =[]
   constructor(public http: Http) { 
     console.log('service listo');
-    
+
+    this.getBooks().subscribe(resp=>{
+      this.books = resp;
+      console.log(this.books)
+      window.localStorage.setItem('data', JSON.stringify(this.books))
+    })
   }
   
   private urlBooks:string = 'https://fakerestapi.azurewebsites.net/api/books'
@@ -19,7 +25,6 @@ export class BookServiceService {
   //método para obtener info de un solo libro
   getBook(id:number){
     let url = `${this.urlBooks}/${id}`
-    console.log(url)
     return this.http.get(url).pipe(map(data => data.json()));                    
   }
 
@@ -57,6 +62,25 @@ export class BookServiceService {
       'Content-Type':'application/json'
     })
     let url = `${this.urlBooks}`
-    return this.http.post(url,body,{ headers }).pipe(map(data => data.json()));
+    return this.http.post(url,body,{ headers })
   }
+
+
+  searchBook( termino:string ){
+    let booksArr:Book[]=[]
+    let books =  JSON.parse(window.localStorage.getItem('data'))
+    termino = termino.toLocaleLowerCase();
+
+    for(let book of this.books){
+      let title = book.Title.toLocaleLowerCase();
+
+      if( title.indexOf( termino )  >= 0 ){
+        booksArr.push( book );
+      }
+
+
+    }
+      return booksArr;
+ }
 }
+

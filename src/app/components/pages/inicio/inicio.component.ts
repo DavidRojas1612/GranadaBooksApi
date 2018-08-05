@@ -18,20 +18,13 @@ export class InicioComponent implements OnInit {
               public imgService: ImgService,
               private router: Router) 
   {
-    this.buscarlibro();
+    
+    this.books = JSON.parse(window.localStorage.getItem('data'))
    }
 
   ngOnInit() {
-    
   }
 
-  buscarlibro(){
-    this.bookService.getBooks().subscribe(resp=>{
-      this.books = resp;
-      console.log(this.books)
-    })
-    
-  }
 
 
   goto(idx){

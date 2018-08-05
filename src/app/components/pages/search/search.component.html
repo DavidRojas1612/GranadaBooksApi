@@ -1,3 +1,14 @@
-<p>
-  search works!
-</p>
+<div class="l-container">
+    <div class="container__grid">
+        <div *ngFor="let book of books; let i = index" class="book" (click)="goto(i+1)">
+           <div class="book__container">
+                <img [src]="this.imgService.getImg(i+1)" alt="" class="book__img">
+                <p class="book__descrip">{{book.Description}}</p>
+            </div>
+            <h2 class="book__title">
+                    {{book.Title}}
+                    <span class="book__date">{{book.PublishDate | date:'yyyy' }}</span>
+            </h2>
+        </div>
+    </div>
+</div>

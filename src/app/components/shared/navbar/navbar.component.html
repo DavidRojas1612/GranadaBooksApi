@@ -15,7 +15,7 @@
       </div>    
       <div class="menu__container__desk" id="desk">
         <h3 class="menu__title">Titulo</h3>
-        <input class="input-f" type="text" name="title" id="title">
+        <input class="input-f" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText.value)" #searchText>
         <button class="book__info__btn outline menu__btn" type="button" routerLink="book/new">Crear Nuevo</button>
       </div>
     </ul>
