@@ -54726,6 +54726,9 @@ var BookEditComponent = /** @class */ /*@__PURE__*/ (function () {
         var _this = this;
         this.bookService.updateBook(this.id, this.book).subscribe(function (resp) {
             if (resp.status === 200) {
+                var books = JSON.parse(window.localStorage.getItem('data'));
+                books.splice(_this.id - 1, 1, _this.book);
+                window.localStorage.setItem('data', JSON.stringify(books));
                 alert("se ha guardado correctamente!, status: " + resp.status);
                 _this.router.navigate(["/"]);
             }
@@ -54867,6 +54870,9 @@ var BookComponent = /** @class */ /*@__PURE__*/ (function () {
         if (safe) {
             this.bookService.deleteBook(id).subscribe(function (resp) {
                 if (resp.status === 200) {
+                    var books = JSON.parse(window.localStorage.getItem('data'));
+                    books.splice(id - 1, 1);
+                    window.localStorage.setItem('data', JSON.stringify(books));
                     alert("se ha borrado correctamente!, status: " + resp.status);
                     _this.router.navigate(["/"]);
                 }
@@ -55283,6 +55289,9 @@ var NewbookComponent = /** @class */ /*@__PURE__*/ (function () {
         var _this = this;
         this.bookService.createBook(this.book).subscribe(function (resp) {
             if (resp.status === 200) {
+                var books = JSON.parse(window.localStorage.getItem('data'));
+                books.push(_this.book);
+                window.localStorage.setItem('data', JSON.stringify(books));
                 alert("se ha guardado correctamente!, status: " + resp.status);
                 _this.router.navigate(["/"]);
             }
