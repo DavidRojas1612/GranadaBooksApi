@@ -30,11 +30,11 @@ export class NavbarComponent implements OnInit {
 
     this.renderer.listen(this.icon.nativeElement,'click', ()=>{
       if(active == false){
-        this.renderer.addClass(this.searchContent.nativeElement,'mostrar');
+        this.renderer.addClass(this.searchContent.nativeElement,'mostrar')
         active = true;
         console.log('agregé')
       }else {
-        this.renderer.removeClass(this.searchContent.nativeElement,'mostrar');
+        this.renderer.removeClass(this.searchContent.nativeElement,'mostrar')
         active = false;
         console.log('quité')
       }
@@ -59,13 +59,13 @@ window.onresize = window.onload = () => {
   let icons = document.getElementById('icons');
   let desk = document.getElementById('desk');
     if (window.innerWidth < 640) {
-      logo.setAttribute('src', 'assets/img/icono_granada.png');
-      logo.style.width = '30px';
+    //  logo.setAttribute('src', 'assets/img/icono_granada.png');
+    //  logo.style.width = '30px';
       icons.style.display='block';
       desk.style.display='none';
     }else{
-      logo.setAttribute('src', 'assets/img/logo_granada.png');
-      logo.style.width = '120px';
+    //  logo.setAttribute('src', 'assets/img/logo_granada.png');
+    //  logo.style.width = '120px';
       icons.style.display='none';
       desk.style.display='block';
     }

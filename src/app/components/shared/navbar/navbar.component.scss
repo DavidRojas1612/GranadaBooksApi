@@ -48,12 +48,21 @@ nav{
     color: $white;
   }
 
-  &__icon{
+  &__icon__content{
       position: absolute;
-      width: 100px;
       left: 10px;
-      top: 10px;   
+      top: 5px;
+      width: 35px;
+      height: 45px;
+      z-index: 200;
+      background-image: url('../../../../assets/img/icono_granada.png');
+      background-size: cover;
+      @include desde($medium){
+        width: 165px;
+        background-image: url('../../../../assets/img/logo_granada.png');
+     }   
       cursor: pointer;
+
   }
 
   &__btn{
