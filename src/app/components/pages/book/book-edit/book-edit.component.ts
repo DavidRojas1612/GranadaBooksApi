@@ -1,16 +1,18 @@
 import { FormGroup,FormControl, Validators,FormBuilder, FormArray } from '@angular/forms';
 import { BookServiceService } from '../../../../services/book-service.service';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ImgService } from 'src/app/services/img.service';
 import { Book } from '../../../../class/books.class';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-book-edit',
   templateUrl: './book-edit.component.html',
   styleUrls: ['./book-edit.component.scss']
 })
+
 export class BookEditComponent implements OnInit {
 
  id:number;

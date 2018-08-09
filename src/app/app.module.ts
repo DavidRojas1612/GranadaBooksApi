@@ -16,6 +16,7 @@ import { InicioComponent } from './components/pages/inicio/inicio.component';
 import { NewbookComponent } from './components/pages/newbook/newbook.component';
 import { BookComponent } from './components/pages/book/book.component';
 import { BookEditComponent } from './components/pages/book/book-edit/book-edit.component';
+import { ToggleshowDirective } from './directives/toggleshow.directive';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { BookEditComponent } from './components/pages/book/book-edit/book-edit.c
     NewbookComponent,
     BookComponent,
     BookEditComponent,
+    ToggleshowDirective,
 
   ],
   imports: [

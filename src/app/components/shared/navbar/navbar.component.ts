@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _router:Router) { }
+  constructor(private _router:Router,
+              private renderer:Renderer2) { }
 
   ngOnInit() {
+    
     
   }
 
@@ -21,27 +23,28 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('searchIcon') icon: ElementRef;
   @ViewChild('searchText') input: ElementRef;
+  @ViewChild('search') searchContent: ElementRef;
   
   ngAfterContentInit() {
     let active = false;
-    this.icon.nativeElement.addEventListener('click', (e:any) =>{
-      
-      if (active === false){
-        document.getElementById('search').classList.add("mostrar");
+
+    this.renderer.listen(this.icon.nativeElement,'click', ()=>{
+      if(active == false){
+        this.renderer.addClass(this.searchContent.nativeElement,'mostrar');
         active = true;
-        }else {
-        document.getElementById('search').classList.remove("mostrar");   
+        console.log('agregé')
+      }else {
+        this.renderer.removeClass(this.searchContent.nativeElement,'mostrar');
         active = false;
+        console.log('quité')
       }
     })
 
-    this.input.nativeElement.addEventListener('keyup', (e)=>{
+    this.renderer.listen(this.input.nativeElement, 'keyup', (e)=>{
       if (e.key === 'Enter'){
-        this.input.nativeElement.setAttribute('value', 'mundo')
-        document.getElementById('search').classList.remove("mostrar");
+        this.renderer.removeClass(this.searchContent.nativeElement, 'mostrar')
       }
-    });
-    
+    })
   
   }
 

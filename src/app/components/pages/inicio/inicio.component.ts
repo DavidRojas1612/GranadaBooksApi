@@ -18,12 +18,13 @@ export class InicioComponent implements OnInit {
               public imgService: ImgService,
               private router: Router) 
   {
+    
+  }
+
+  ngOnInit() {
     setTimeout(()=>{
       this.books = JSON.parse(window.localStorage.getItem('data'))
     },1000)
-   }
-
-  ngOnInit() {
   }
 
 
