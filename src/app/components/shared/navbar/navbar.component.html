@@ -7,7 +7,7 @@
           <!-- <img class="menu__icon imgNavb" src="assets/img/logo_granada.png" id="imgNavb"> -->
         </div>
       </a>
-      <div class="menu__container icons" id="icons" >  
+      <div class="menu__container icons" id="icons" #icons>  
         
         <img class="menu__icon__item" src="assets/img/search.png" #searchIcon >
         
@@ -15,7 +15,7 @@
             <img class="menu__icon__item" src="assets/img/add.png">
         </a>
       </div>    
-      <div class="menu__container__desk desk" id="desk" >
+      <div class="menu__container__desk desk" id="desk" #desk>
         <h3 class="menu__title">Título</h3>
         <input class="input-f" type="text" name="title" id="title" (keyUp.enter)="searchBook(searchText1.value)" #searchText1>
         <button class="book__info__btn outline menu__btn" type="button" routerLink="book/new">Crear Nuevo</button>

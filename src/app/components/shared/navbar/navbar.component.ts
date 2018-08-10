@@ -24,6 +24,8 @@ export class NavbarComponent implements OnInit {
   @ViewChild('searchIcon') icon: ElementRef;
   @ViewChild('searchText') input: ElementRef;
   @ViewChild('search') searchContent: ElementRef;
+  @ViewChild('icons') icons: ElementRef;
+  @ViewChild('desk') desk: ElementRef;
   
   ngAfterContentInit() {
     let active = false;
@@ -45,26 +47,26 @@ export class NavbarComponent implements OnInit {
         this.renderer.removeClass(this.searchContent.nativeElement, 'mostrar')
       }
     })
+
+
+    window.onresize = window.onload = () => {
+        if (window.innerWidth < 640) {
+          this.renderer.setAttribute(this.icons.nativeElement,'style','display: block')
+          this.renderer.setAttribute(this.desk.nativeElement,'style','display: none')
+        }else{
+          this.renderer.setAttribute(this.icons.nativeElement,'style','display: none')
+          this.renderer.setAttribute(this.desk.nativeElement,'style','display: block')
+        }
+    };
   
   }
 
+  
 
 }
 
 
 
 //metodo para hacer el navbar responsivo con las imagenes.
-window.onresize = window.onload = () => {
-  let logo = document.getElementById('imgNavb');
-  let icons = document.getElementById('icons');
-  let desk = document.getElementById('desk');
-    if (window.innerWidth < 640) {
-      icons.style.display='block';
-      desk.style.display='none';
-    }else{
-    
-      icons.style.display='none';
-      desk.style.display='block';
-    }
-};
+
 
